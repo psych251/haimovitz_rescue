@@ -1,6 +1,6 @@
 ---
-title: "Replication of Study X by Sample & Sample (20xx, Psychological Science)"
-author: "Replication Author[s] (contact information)"
+title: "Replication of Study Parents’ Views of Failure Predict Children’s Fixed and Growth Intelligence Mind-Sets by Haimovitz & Dweck (2016, Psychological Science)"
+author: "Khaing Mon (ksmon@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 format:
   html:
