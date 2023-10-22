@@ -24,7 +24,13 @@ Link to Paper: https://pdfs.semanticscholar.org/7172/b578bfc9a77fbcd34c8e2417b67
 
 ## Summary of prior replication attempt
 
-Based on the prior write-up, describe any differences between the original and 1st replication in terms of methods, sample, sample size, and analysis. Note any potential problems such as exclusion rates, noisy data, or issues with analysis. 
+The prior replication attempt made for the Haimovitz paper from previous years made a great effort towards replicating the effects that were seen on the effect of parents' failure mindsets on their responses to their children's hypothetical failures. The replication study followed a similar method route -- they both recruited a group of parents from a crowdsourcing platform, requested survey responses, and used the same coding framework for data analysis. The replication study, however, used a different crowdsourcing platform (Prolific) and recruited 120 parents (190 less than the original) to achieve 80% power. The sample included the following demographics:
+
+* "57% female"
+* "31% had a high school diploma or some college education, 51% had a college degree, and 18% had a postgraduate degree." 
+* "75% White, 12% African American, 7% Asian American, and 6% Hispanic"
+
+The replication study also added additional funnel debrief questions to collect more demographic information about the subjects' children and relabeled some survey questions for clearness. The coding scheme remained relatively the same. Lastly, during analysis, only one rater coded the responses (compared to two raters in the original study).
 
 ## Methods
 
@@ -37,31 +43,33 @@ How much power does your planned sample have for original effect? For an attenua
 (If power analysis is not possible or precise, discuss more fully how you determined a sample size that would be sufficient for rescue.)
 
 ### Planned Sample
-
-Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any.
+For my sample, I plan to collect more data using a similar or larger sample size using the same crowdsourcing platfom. I will be hoping to control for the sample's sex (male or female parents), but will still attempt to achieve 80% power. 
 
 ### Materials
 
 All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
 
 ### Procedure	
-
-Can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+From the paper: Two raters, blind to condition, coded the openended responses. 
+"Participants completed an online survey initially assessing several beliefs, including their perceptions of their child’s competence (assessed with same measure as in Study 1; α = .79). Then we temporarily manipulated failure mind-sets by randomly assigning the parents to complete one of two five-item biased questionnaires, written to foster agreement with
+either a failure-is-debilitating mind-set (e.g., “Experiencing failure can lead to negative feelings, like shame or
+sadness, that interfere with learning”) or a failure-isenhancing mind-set (e.g., “Experiencing failure can improve performance in the long run if you learn from it”). All measures used a 6-point rating scale from 1 (strongly disagree) to 6 (strongly agree). One-sample t tests comparing the mean in each priming condition with the scale’s midpoint (3.5) showed that participants’ agreement with the intended mind-set was above the midpoint in both the failure-is-debilitating condition (M = 4.41, SD  = 1.07), t(56) = 6.45, p < .001, and the failure-isenhancing condition (M = 5.14, SD = 0.829), t(74) = 17.11, p < .001. We then asked participants to read and vividly imagine a scenario in which their child came home from school with a failing grade on a math quiz, as in Study 2. They then wrote what they would do, think, and feel in
+response. Finally, participants reported on their failure mind-sets (α = .82), using the same items as in Study 1,
+as part of a survey that included a few other items." Can quote directly from original article - just put the text in quotations and note that this was followed precisely. Or, quote directly and just point out exceptions to what was described in the original article."
 
 ### Controls
-
-What attention checks, positive or negative controls, or other quality control measures are you adding so that a (positive or negative) result will be more interpretable?
-
+Quality control measures that I will be adding to the experiment are: changing some of the coding measures to better interpret the open-ended questions, the coders gave a score of 1 each time that a code was present. However, I think that there needs to be more nuance that captures the varying intensity of the different open-ended responses. 
 
 ### Analysis Plan
+The analysis that was used for both the original and the replication study was based on the same coding schema: 
 
-Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.  
+"Two raters, blind to condition, coded the open-ended responses. The first author developed a coding scheme on the basis of an initial reading of the responses and then made clarifying revisions on the basis of feedback from the two raters. The codes were broken down into two main categories of interest: performance-oriented responses and learning-oriented responses. Coders gave a score of 1 each time a code was present."
 
-**Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
+**Clarify key analysis of interest here**  I also attempt to see the link between different demographic factors (i.e. age, race, gender) and its effect on the response towards the child's failure. 
 
 ### Differences from Original Study and 1st replication
 
-Explicitly describe known differences in sample, setting, procedure, and analysis plan from original study.  The goal, of course, is to minimize those differences, but differences will inevitably occur.  Also, note whether such differences are anticipated to make a difference based on claims in the original article or subsequent published research on the conditions for obtaining the effect.
+I hope to minimize the differences between my replication study and the previous attempts. First, I hope to utilize the same survey questions and coding schemas as done before -- with the exception of adding a little bit more nuance to the decision of the coding schemas. Other than that and the different parental demographics, I hope to retain the same method and analyses of both prior studies. 
 
 ### Methods Addendum (Post Data Collection)
 
@@ -85,10 +93,13 @@ Data preparation following the analysis plan.
 ### Data Preparation
 
 #### Load Relevant Libraries and Functions
-
+library(tidyverse)
+library(knitr)
+library(qualtRics)
+library(psych)
 #### Import data
 
-#### Data exclusion / filtering
+#### Data exclusion / filtering: will be filtering out unclear or NA responses 
 
 #### Prepare data for analysis - create columns etc.
 ```
@@ -98,8 +109,7 @@ Data preparation following the analysis plan.
 How did people perform on any quality control checks or positive and negative controls? 
 
 ### Confirmatory analysis
-
-The analyses as specified in the analysis plan.  
+After conducting the analysis, the goal was to determine whether or not parents that held a failure-is-debilitating mind-set is more likely to react with concerns about their child's performance and whether or not this concern was related to their child's ability.
 
 *Three-panel graph with original, 1st replication, and your replication is ideal here*
 
