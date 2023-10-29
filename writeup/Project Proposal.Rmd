@@ -3,10 +3,12 @@ title: "Replication of Study Parents’ Views of Failure Predict Children’s Fi
   Growth Intelligence Mind-Sets by Haimovitz & Dweck (2016, Psychological Science)"
 author: "Khaing Mon (ksmon@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
-format:
-  html:
+output:
+  html_document:
     toc: yes
     toc_depth: 3
+    toc_float:
+      collapsed: false
 ---
 
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
@@ -19,6 +21,7 @@ This study focuses on the distinction between fixed and growth mindset for child
 In this study, 132 parents were recruited to take a survey about failure mindsets and tasked to imagine a scenario in which in which their child came home from school with a failing grade on a math quiz. They were then asked what they would do. It was shown that parents that were induced a “failure-is-debilitating mind-set were more likely to react with concerns about their child’s performance and lack of ability.” These results were then used to conclude that parental beliefs about failure are visible and can shape children’s attitudes and beliefs about their own intelligence. This experiment requires a study that is 1) able to induce and differentiate between the two intelligence mindsets for parents, 2) a case where parents can tap into realistic hypothetical failures, and 3) a method to establish causation between parents’ failure mindsets their perspective on their children’s failures. Some challenges include the effectiveness with which we can induce different failure mindsets and accuracy with which the survey questions can accurately portray parental beliefs towards their children.
 
 Link to Repository: git@github.com:psych251/haimovitz_rescue.git
+
 Link to Paper: https://pdfs.semanticscholar.org/7172/b578bfc9a77fbcd34c8e2417b674977f73fc.pdf?te=1&nl=nyt-parenting&emc=edit_ptg_20200108
 
 
@@ -51,17 +54,20 @@ All materials - can quote directly from original article - just put the text in 
 
 ### Procedure	
 From the paper: Two raters, blind to condition, coded the openended responses. 
+
 "Participants completed an online survey initially assessing several beliefs, including their perceptions of their child’s competence (assessed with same measure as in Study 1; α = .79). Then we temporarily manipulated failure mind-sets by randomly assigning the parents to complete one of two five-item biased questionnaires, written to foster agreement with
 either a failure-is-debilitating mind-set (e.g., “Experiencing failure can lead to negative feelings, like shame or
 sadness, that interfere with learning”) or a failure-isenhancing mind-set (e.g., “Experiencing failure can improve performance in the long run if you learn from it”). All measures used a 6-point rating scale from 1 (strongly disagree) to 6 (strongly agree). One-sample t tests comparing the mean in each priming condition with the scale’s midpoint (3.5) showed that participants’ agreement with the intended mind-set was above the midpoint in both the failure-is-debilitating condition (M = 4.41, SD  = 1.07), t(56) = 6.45, p < .001, and the failure-isenhancing condition (M = 5.14, SD = 0.829), t(74) = 17.11, p < .001. We then asked participants to read and vividly imagine a scenario in which their child came home from school with a failing grade on a math quiz, as in Study 2. They then wrote what they would do, think, and feel in
 response. Finally, participants reported on their failure mind-sets (α = .82), using the same items as in Study 1,
 as part of a survey that included a few other items." Can quote directly from original article - just put the text in quotations and note that this was followed precisely. Or, quote directly and just point out exceptions to what was described in the original article."
 
+The link to the qualtrics survey that I created for this replication study is here: https://stanforduniversity.qualtrics.com/jfe/form/SV_9tVwoAgXkfFqHOK
+
 ### Controls
 Quality control measures that I will be adding to the experiment are: changing some of the coding measures to better interpret the open-ended questions, the coders gave a score of 1 each time that a code was present. However, I think that there needs to be more nuance that captures the varying intensity of the different open-ended responses. 
 
 ### Analysis Plan
-The analysis that was used for both the original and the replication study was based on the same coding schema: 
+To conduct analysis, we first must separate the likert scale questions and the open response questions. The open responses will be analyzed using the coding schema used for both the original and the replication study: 
 
 "Two raters, blind to condition, coded the open-ended responses. The first author developed a coding scheme on the basis of an initial reading of the responses and then made clarifying revisions on the basis of feedback from the two raters. The codes were broken down into two main categories of interest: performance-oriented responses and learning-oriented responses. Coders gave a score of 1 each time a code was present."
 
@@ -85,31 +91,60 @@ You can comment this section out prior to final report with data collection.
 ## Results
 
 
-### Data preparation
+### Data preparation: Edits made for Pilot A 
 
-Data preparation following the analysis plan.
-	
 ```{r include=F}
 ### Data Preparation
 
 #### Load Relevant Libraries and Functions
 library(tidyverse)
 library(knitr)
-library(qualtRics)
-library(psych)
-#### Import data
 
-#### Data exclusion / filtering: will be filtering out unclear or NA responses 
+#### Import data as CSV
+setwd("/Users/khaingmon/Desktop/haimovitz_rescue/data/")
+pilot_data <- read.csv("PilotAData.csv", header = TRUE, sep = ",")
 
-#### Prepare data for analysis - create columns etc.
+#get rid of survey meta data: first two rows and columns that include items like IP address + location
+pilot_data <- pilot_data[-c(1, 2), ]
+pilot_data <- pilot_data[, -c(3:8)]
+pilot_data <- pilot_data[, -c(4:11)]
+
+
+#### Data exclusion:Filter out all the responses that have empty open responses or survey respondents that have no children
+filtered_pilot <- pilot_data %>%
+  filter(Parent == 'Yes')  %>%
+  filter(Open_1 != ''|Open_2 != ''|Open_3 != '')
+
+### dataframe with only the open response questions 
+open_responses <- filtered_pilot %>%
+  select(ResponseId, Open_1, Open_2, Open_3)
+  write.csv(open_responses, "../data/pilot_open_responses.csv")
+
+### dataframe without the open response questions
+survey_responses <- filtered_pilot %>%
+  select(-Open_1, -Open_2, -Open_3)
+  write.csv(survey_responses, "../data/pilot_survey_responses.csv")
+
 ```
 
 ### Results of control measures
 
 How did people perform on any quality control checks or positive and negative controls? 
 
-### Confirmatory analysis
-After conducting the analysis, the goal was to determine whether or not parents that held a failure-is-debilitating mind-set is more likely to react with concerns about their child's performance and whether or not this concern was related to their child's ability.
+### Confirmatory analysis: Edits made for Pilot A 
+After conducting the analysis, the goal was to determine whether or not parents that held a failure-is-debilitating mind-set is more likely to react with concerns about their child's performance and whether or not this concern was related to their child's ability. This was done with an unpaired two-tailed t-test. The code for this confirmatory analyses of my pilot study is here:
+```{r}
+#I wasn't able to separate the two conditions: debilitating vs. enhancing on the qualtrics survey. This, however, is the analysis code when that has been completed. 
+
+#enhancing_coded <- survey_responses %>%
+#  filter(condition == "Enhancing")
+#debilitating_coded <- survey_responses %>%
+# filter(condition == "Debilitating")
+
+# conduct the t-test
+#t_test_result <- t.test(enhancing_coded$code_results, debilitating_code$code_results, alternative = "two.sided", var.equal #= FALSE)
+```
+
 
 *Three-panel graph with original, 1st replication, and your replication is ideal here*
 
