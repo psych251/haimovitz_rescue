@@ -101,7 +101,7 @@ library(tidyverse)
 library(knitr)
 
 #### Import data as CSV
-setwd("/Users/khaingmon/Desktop/haimovitz_rescue/data/")
+setwd("/Users/khaingmon/Desktop/Psych_251_Data/")
 pilot_data <- read.csv("PilotBData.csv", header = TRUE, sep = ",")
 
 #get rid of survey meta data: first two rows and columns that include items like IP address + location, data only after 17th
@@ -126,12 +126,12 @@ filtered_pilot <- filtered_pilot %>%
 ### dataframe with only the open response questions 
 open_responses <- filtered_pilot %>%
   select(ResponseId, Open_1, Open_2, Open_3, Condition) #should I remove condition here for blindness
-  write.csv(open_responses, "../data/pilotB_open_responses.csv")
+  write.csv(open_responses, "/Users/khaingmon/Desktop/haimovitz_rescue/data/pilotB_open_responses.csv")
 
 ### dataframe without the open response questions
 survey_responses <- filtered_pilot %>%
   select(-Open_1, -Open_2, -Open_3)
-  write.csv(survey_responses, "../data/pilotB_survey_responses.csv")
+  write.csv(survey_responses, "/Users/khaingmon/Desktop/haimovitz_rescue/data/pilotB_survey_responses.csv")
 
 ```
 

@@ -11,7 +11,7 @@
 
 <meta name="author" content="Khaing Mon (ksmon@stanford.edu)" />
 
-<meta name="date" content="2023-10-29" />
+<meta name="date" content="2023-11-18" />
 
 <title>Replication of Study Parents’ Views of Failure Predict Children’s Fixed and Growth Intelligence Mind-Sets by Haimovitz &amp; Dweck (2016, Psychological Science)</title>
 
@@ -1495,7 +1495,7 @@ font-size: 0.95em;
 Failure Predict Children’s Fixed and Growth Intelligence Mind-Sets by
 Haimovitz &amp; Dweck (2016, Psychological Science)</h1>
 <h4 class="author">Khaing Mon (<a href="mailto:ksmon@stanford.edu" class="email">ksmon@stanford.edu</a>)</h4>
-<h4 class="date">October 29, 2023</h4>
+<h4 class="date">November 18, 2023</h4>
 
 </div>
 
@@ -1657,7 +1657,7 @@ gender) and its effect on the response towards the child’s failure.</p>
 <p>I hope to minimize the differences between my replication study and
 the previous attempts. First, I hope to utilize the same survey
 questions and coding schemas as done before – with the exception of
-adding a little bit more nuance to the decision of the coding schemas.
+adding a little bit more nuance to the decision of the coding schema.
 Other than that and the different parental demographics, I hope to
 retain the same method and analyses of both prior studies.</p>
 </div>
@@ -1687,20 +1687,18 @@ in analysis plan</p>
 <p>How did people perform on any quality control checks or positive and
 negative controls?</p>
 </div>
-<div id="confirmatory-analysis-edits-made-for-pilot-a" class="section level3">
-<h3>Confirmatory analysis: Edits made for Pilot A</h3>
+<div id="confirmatory-analysis-progress-check-3" class="section level3">
+<h3>Confirmatory analysis: Progress Check 3</h3>
 <p>After conducting the analysis, the goal was to determine whether or
 not parents that held a failure-is-debilitating mind-set is more likely
 to react with concerns about their child’s performance and whether or
 not this concern was related to their child’s ability. This was done
 with an unpaired two-tailed t-test. The code for this confirmatory
 analyses of my pilot study is here:</p>
-<pre class="r"><code>#I wasn&#39;t able to separate the two conditions: debilitating vs. enhancing on the qualtrics survey. This, however, is the analysis code when that has been completed. 
-
-#enhancing_coded &lt;- survey_responses %&gt;%
-#  filter(condition == &quot;Enhancing&quot;)
-#debilitating_coded &lt;- survey_responses %&gt;%
-# filter(condition == &quot;Debilitating&quot;)
+<pre class="r"><code>enhancing_coded &lt;- survey_responses %&gt;%
+  filter(Condition == &quot;Enhancing&quot;)
+debilitating_coded &lt;- survey_responses %&gt;%
+ filter(Condition == &quot;Debilitating&quot;)
 
 # conduct the t-test
 #t_test_result &lt;- t.test(enhancing_coded$code_results, debilitating_code$code_results, alternative = &quot;two.sided&quot;, var.equal #= FALSE)</code></pre>
