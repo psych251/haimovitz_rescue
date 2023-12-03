@@ -39,9 +39,17 @@ The replication study also added additional funnel debrief questions to collect 
 
 ### Power Analysis
 
-Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.
+Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size. ηp2 = .075 (d = 0.51)
 
 How much power does your planned sample have for original effect? For an attenuated effect that is half the size of the original? 
+
+**Power analysis to detect this effect size with an alpha of 0.05:**
+
+ * To achieve 80% power, 96 parents are required.
+ * To achieve 90% power, 132 parents are required.
+ * To achieve 95% power, 166 parents are required.
+
+For this study, I want to achieve 80% power and thus will be trying to recruit ~ 100 parents
 
 (If power analysis is not possible or precise, discuss more fully how you determined a sample size that would be sufficient for rescue.)
 
@@ -91,7 +99,7 @@ You can comment this section out prior to final report with data collection.
 ## Results
 
 
-### Data preparation: Edits made for Pilot A 
+### Data preparation
 
 ```{r include=F}
 ### Data Preparation
@@ -105,13 +113,17 @@ setwd("/Users/khaingmon/Desktop/Psych_251_Data/")
 pilot_data <- read.csv("PilotBData.csv", header = TRUE, sep = ",")
 
 #get rid of survey meta data: first two rows and columns that include items like IP address + location, data only after 17th
-pilot_data <- pilot_data[-c(1:20), ]
+pilot_data <- pilot_data[-c(1:27), ]
 pilot_data <- pilot_data[, -c(3:8)]
 pilot_data <- pilot_data[, -c(4:11)]
 pilot_data <- pilot_data[, -c(1:2)]
 
+#edit the response IDs so that they are ordered in sequential order
+pilot_data <- pilot_data %>%
+  mutate(ResponseId = row_number())
 ```
-
+In this next section, I will filter out the dataframe, identify subjects in the debilitating/enhancing condition and 
+then split up the data into just the Open Responses and just the Survey Responses. 
 
 ```{r include=F}
 #### Data exclusion:Filter out all the responses that have empty open responses or survey respondents that have no children
@@ -123,17 +135,24 @@ filtered_pilot <- pilot_data %>%
 filtered_pilot <- filtered_pilot %>%
   mutate(Condition = ifelse(is.na(Enhancing_1) | Enhancing_1 == "", "Debilitating", "Enhancing"))
 
+#ensure that all survey items only contain numeric values
+
 ### dataframe with only the open response questions 
 open_responses <- filtered_pilot %>%
-  select(ResponseId, Open_1, Open_2, Open_3, Condition) #should I remove condition here for blindness
+  select(ResponseId, Open_1, Open_2, Open_3, Condition) %>%
+  mutate(p_ability = 0, p_entity = 0, p_pity = 0, p_self_worth = 0, p_grades = 0, p_social = 0, l_effort = 0, l_strategy = 0, l_help = 0, l_mastery = 0, l_interest = 0, l_failure_good = 0, o_ask_child = 0, sum_performance = 0, sum_learning = 0)
   write.csv(open_responses, "/Users/khaingmon/Desktop/haimovitz_rescue/data/pilotB_open_responses.csv")
 
 ### dataframe without the open response questions
 survey_responses <- filtered_pilot %>%
   select(-Open_1, -Open_2, -Open_3)
   write.csv(survey_responses, "/Users/khaingmon/Desktop/haimovitz_rescue/data/pilotB_survey_responses.csv")
-
 ```
+Now, I will load the coded responses (analysis done by blind rater on the open responses)
+```{r}
+#load in the coded data your_data <- read.csv("/Users/khaingmon/Desktop/haimovitz_rescue/data/check.csv", fill = TRUE)
+coded_data <- read.csv("/Users/khaingmon/Desktop/haimovitz_rescue/data/pilotB_coded_responses.csv", header = TRUE, sep = ",")
+``` 
 
 ### Results of control measures
 
@@ -142,14 +161,21 @@ How did people perform on any quality control checks or positive and negative co
 ### Confirmatory analysis: Progress Check 3
 After conducting the analysis, the goal was to determine whether or not parents that held a failure-is-debilitating mind-set is more likely to react with concerns about their child's performance and whether or not this concern was related to their child's ability. This was done with an unpaired two-tailed t-test. The code for this confirmatory analyses of my pilot study is here:
 ```{r}
-
 enhancing_coded <- survey_responses %>%
   filter(Condition == "Enhancing")
 debilitating_coded <- survey_responses %>%
  filter(Condition == "Debilitating")
 
-# conduct the t-test
-#t_test_result <- t.test(enhancing_coded$code_results, debilitating_code$code_results, alternative = "two.sided", var.equal #= FALSE)
+#separate coded data into FIE/FID conditions
+coded_fie <- coded_data %>%
+  filter(Condition == 'Enhancing')  
+coded_fid <- coded_data %>%
+  filter(Condition == 'Debilitating')
+
+#conduct the t-test. For pilot B, there are no results yet because we only have on observation each, but this line of code does conduct t.test correctly. 
+t_value <- t.test(coded_fie$sum_performance, coded_fid$sum_performance)
+p_value <- t_value$p.value
+
 ```
 
 
