@@ -10,190 +10,460 @@ output:
     toc_float:
       collapsed: false
 ---
-
-<!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
-
 ## Introduction
-My research interests lie in the realm of Education and the different levers that are involved in the learning sciences. Motivation and growth mindset are very well studied and integral parts of researching how humans learn, how humans view intelligence, and the science behind continuous learning both outside and inside the school environment. For this reason, Haimovitz’s study on children’s implicit theories on intelligence and how they are developed in the home environment is very applicable to my research interests. I believe that understanding how children develop mindsets about their intelligence and how this impacts their motivation to learn. 
+My research interests lie in the realm of Education and the different levers involved in the learning sciences. Motivation and growth mindset are very well studied and integral parts of researching how humans learn, how humans view intelligence, and the science behind continuous learning both outside and inside the school environment. For this reason, Haimovitz’s study on children’s implicit theories on intelligence and how they are developed in the home environment is very relevant to my research interests. Examining how children develop intelligence mindsets is integral to understanding their motivation to learn. 
 
-This study focuses on the distinction between fixed and growth mindset for children in school and the effect that this has on their motivation. The potential that this intelligence mindset has on children is tremendous, and thus it is important to study where and how these mindsets get developed from the home environment — specifically the parents’ own intelligence mindset. There are four different studies that study this link. For the sake of this replication project, I will focus on study 4, which examines “the causal effect of parents’ failure mind-sets on their responses to their children’s hypothetical failure.”
+Study #4 from the Haimovitz and Dweck's study "What Predicts Children’s
+Fixed and Growth Intelligence Mind-Sets? Not Their Parents’ Views of Intelligence but Their Parents’ Views of Failure" explores the effect of parents’ failure mindsets on their responses to their children’s hypothetical failure. Specifically, they question whether or not parents who believe failure is debilitating (fixed mindset) exhibit more concern about their children's performance and ability rather than their children's learning. 
 
-In this study, 132 parents were recruited to take a survey about failure mindsets and tasked to imagine a scenario in which in which their child came home from school with a failing grade on a math quiz. They were then asked what they would do. It was shown that parents that were induced a “failure-is-debilitating mind-set were more likely to react with concerns about their child’s performance and lack of ability.” These results were then used to conclude that parental beliefs about failure are visible and can shape children’s attitudes and beliefs about their own intelligence. This experiment requires a study that is 1) able to induce and differentiate between the two intelligence mindsets for parents, 2) a case where parents can tap into realistic hypothetical failures, and 3) a method to establish causation between parents’ failure mindsets their perspective on their children’s failures. Some challenges include the effectiveness with which we can induce different failure mindsets and accuracy with which the survey questions can accurately portray parental beliefs towards their children.
+In this study, 132 parents were recruited to take a survey about failure mindsets and tasked to imagine a scenario in which their child came home from school with a failing grade on a math quiz. They were then asked what they would do. It was shown that parents who were induced a **“failure-is-debilitating mindset were more likely to react with concerns about their child’s performance and lack of ability.”** These results were then used to conclude that parental beliefs about failure are visible and can shape children’s attitudes and beliefs about their intelligence. This experiment requires a study that is 1) able to induce and differentiate between the two intelligence mindsets for parents, 2) a case where parents can tap into realistic hypothetical failures, and 3) a method to establish causation between parents’ failure mindsets their perspective on their children’s failures.
 
-Link to Repository: git@github.com:psych251/haimovitz_rescue.git
+**Link to Original Paper**: https://pdfs.semanticscholar.org/7172/b578bfc9a77fbcd34c8e2417b674977f73fc.pdf?te=1&nl=nyt-parenting&emc=edit_ptg_20200108
 
-Link to Paper: https://pdfs.semanticscholar.org/7172/b578bfc9a77fbcd34c8e2417b674977f73fc.pdf?te=1&nl=nyt-parenting&emc=edit_ptg_20200108
+**Link to My Repository**: git@github.com:psych251/haimovitz_rescue.git
 
+**Link to Pre-Registration**: https://osf.io/v564s/
 
 ## Summary of prior replication attempt
 
-The prior replication attempt made for the Haimovitz paper from previous years made a great effort towards replicating the effects that were seen on the effect of parents' failure mindsets on their responses to their children's hypothetical failures. The replication study followed a similar method route -- they both recruited a group of parents from a crowdsourcing platform, requested survey responses, and used the same coding framework for data analysis. The replication study, however, used a different crowdsourcing platform (Prolific) and recruited 120 parents (190 less than the original) to achieve 80% power. The sample included the following demographics:
+The prior replication attempt made for the Haimovitz paper from previous years made a great effort towards replicating the effects that were seen in the original paper. This replication study (Born, 2017) followed a similar method route as the original study-- they recruited a group of parents from Amazon Mechanical Turk, requested survey responses, and used the same coding framework for data analysis.
 
-* "57% female"
+Some notable differences from the original study were: 1) the replication study recruited 100 parents (32 less than the original paper) to achieve 80% power and 2) and recruited one other independent rater for the coding of the open-response questions (the original study had two independent raters) in addition to themselves. 
+
+Their sample included the following demographics: 
+
+* "49% female"
 * "31% had a high school diploma or some college education, 51% had a college degree, and 18% had a postgraduate degree." 
-* "75% White, 12% African American, 7% Asian American, and 6% Hispanic"
+* "76% White, 11% Hispanic, 5% Asian American, 2% African American"
 
-The replication study also added additional funnel debrief questions to collect more demographic information about the subjects' children and relabeled some survey questions for clearness. The coding scheme remained relatively the same. Lastly, during analysis, only one rater coded the responses (compared to two raters in the original study).
+The replication study **did not** replicate the results of the original study. Instead, they found the opposite key results: 
+
+> "Parents who were induced to hold a failure-is-debilitating mindset were less likely to react with concerns about their child’s performance and lack of ability, t(93) = -1.93, p = .056, and more likely to react with support for their child’s learning and mastery, t(94) = 0.21, p = .83, compared with those who were induced to hold a failure-is-enhancing mindset" (Born, 2017).
 
 ## Methods
 
 ### Power Analysis
 
-Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size. ηp2 = .075 (d = 0.51)
-
-How much power does your planned sample have for original effect? For an attenuated effect that is half the size of the original? 
+The effect size from the original study was ηp2 = .075 (d = 0.567). 
 
 **Power analysis to detect this effect size with an alpha of 0.05:**
 
- * To achieve 80% power, 96 parents are required.
+ * To achieve 80% power, 100 parents are required.
  * To achieve 90% power, 132 parents are required.
- * To achieve 95% power, 166 parents are required.
-
-For this study, I want to achieve 80% power and thus will be trying to recruit ~ 100 parents
-
-(If power analysis is not possible or precise, discuss more fully how you determined a sample size that would be sufficient for rescue.)
+ * To achieve 95% power, 164 parents are required.
 
 ### Planned Sample
-For my sample, I plan to collect more data using a similar or larger sample size using the same crowdsourcing platfom. I will be hoping to control for the sample's sex (male or female parents), but will still attempt to achieve 80% power. 
+Though the power analysis was extremely informative, I chose to collect the same sample size as the original study **(n = 132).** This is because my replication study was done jointly with another student in the course (Eunjung) -- the data collected from these participants was used by both of us for our independent analysis. For this reason, we decided to increase our sample size to better replicate the results of the original study and to account for anticipated exclusions (more information will be described in the Post-Data-Collection Methods Addendum Section). For our final analysis, we ended up with 141 valid survey responses! 
 
 ### Materials
+All materials used for the rescue project followed closely to that of the original paper. To create the survey, I used the materials provided by the original study (found here: https://osf.io/hb583). This allowed me to craft the survey using the same questions as the original study. In addition, we were also able to contact the original authors (Carol Dweck and Kyla Haimovitz), who gave us feedback and advice on some of the wording and formatting of the experiment. Once we had the go-ahead, the final Qualtrics survey was linked to a Prolific study where the final responses were collected. 
 
-All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+**Link to my Qualtrics Survey**: https://stanforduniversity.qualtrics.com/jfe/form/SV_9tVwoAgXkfFqHOK
 
 ### Procedure	
-From the paper: Two raters, blind to condition, coded the openended responses. 
+Below is the procedure of the experiment directly from the original study: 
 
-"Participants completed an online survey initially assessing several beliefs, including their perceptions of their child’s competence (assessed with same measure as in Study 1; α = .79). Then we temporarily manipulated failure mind-sets by randomly assigning the parents to complete one of two five-item biased questionnaires, written to foster agreement with
-either a failure-is-debilitating mind-set (e.g., “Experiencing failure can lead to negative feelings, like shame or
-sadness, that interfere with learning”) or a failure-isenhancing mind-set (e.g., “Experiencing failure can improve performance in the long run if you learn from it”). All measures used a 6-point rating scale from 1 (strongly disagree) to 6 (strongly agree). One-sample t tests comparing the mean in each priming condition with the scale’s midpoint (3.5) showed that participants’ agreement with the intended mind-set was above the midpoint in both the failure-is-debilitating condition (M = 4.41, SD  = 1.07), t(56) = 6.45, p < .001, and the failure-isenhancing condition (M = 5.14, SD = 0.829), t(74) = 17.11, p < .001. We then asked participants to read and vividly imagine a scenario in which their child came home from school with a failing grade on a math quiz, as in Study 2. They then wrote what they would do, think, and feel in
+> "Participants completed an online survey initially assessing several beliefs, including their perceptions of their child’s competence (assessed with the same measure as in Study 1; α = .79). Then we temporarily manipulated failure mindset by randomly assigning the parents to complete one of two five-item biased questionnaires, written to foster agreement with
+either a failure-is-debilitating mindset (e.g., “Experiencing failure can lead to negative feelings, like shame or
+sadness, that interferes with learning”) or a failure-is-enhancing mindset (e.g., “Experiencing failure can improve performance in the long run if you learn from it”). All measures used a 6-point rating scale from 1 (strongly disagree) to 6 (strongly agree). One-sample t-tests comparing the mean in each priming condition with the scale’s midpoint (3.5) showed that participants’ agreement with the intended mindset was above the midpoint in both the failure-is-debilitating condition (M = 4.41, SD  = 1.07), t(56) = 6.45, p < .001, and the failure-is enhancing condition (M = 5.14, SD = 0.829), t(74) = 17.11, p < .001. We then asked participants to read and vividly imagine a scenario in which their child came home from school with a failing grade on a math quiz, as in Study 2. They then wrote what they would do, think, and feel in
 response. Finally, participants reported on their failure mind-sets (α = .82), using the same items as in Study 1,
-as part of a survey that included a few other items." Can quote directly from original article - just put the text in quotations and note that this was followed precisely. Or, quote directly and just point out exceptions to what was described in the original article."
+as part of a survey that included a few other items."
 
-The link to the qualtrics survey that I created for this replication study is here: https://stanforduniversity.qualtrics.com/jfe/form/SV_9tVwoAgXkfFqHOK
+My experiment followed this procedure precisely. I added demographic and follow-up questions at the end of the survey, but the actual experiment paradigm (the wording, format, and ordering of the questions) remained the same as the original study. 
 
 ### Controls
-Quality control measures that I will be adding to the experiment are: changing some of the coding measures to better interpret the open-ended questions, the coders gave a score of 1 each time that a code was present. However, I think that there needs to be more nuance that captures the varying intensity of the different open-ended responses. 
+To ensure that we can maximize the number of viable survey responses, I add the following attention checks and controls to the experiment paradigm: 
+
+ * **Larger Open-Response Boxes:** As per the original author's request, I made the open-response text boxes larger to prompt more lengthy responses from the subjects. This was to encourage parents to write their responses in detail -- allowing us to collect more detailed and informative data. 
+ * **Equal Distribution in each Manipulation Condition:** Qualtrics allowed me to make sure that all survey respondents were split into either manipulation condition equally. 
+ * **Parent Respondents:** Both my Qualtrics survey and the Prolific screening options allowed me to screen for only respondents who were parents. Prolific screening allowed me to choose subjects that had 1+ children. I also added logic to my Qualtrics such that if subjects responded they were not parents, the survey would end immediately. This allowed me to minimize the number of exclusion cases. 
 
 ### Analysis Plan
-To conduct analysis, we first must separate the likert scale questions and the open response questions. The open responses will be analyzed using the coding schema used for both the original and the replication study: 
+There are four different types of analysis that I will conduct to properly replicate the original study. The first three are manipulation checks and the last one represents the key findings: 
 
-"Two raters, blind to condition, coded the open-ended responses. The first author developed a coding scheme on the basis of an initial reading of the responses and then made clarifying revisions on the basis of feedback from the two raters. The codes were broken down into two main categories of interest: performance-oriented responses and learning-oriented responses. Coders gave a score of 1 each time a code was present."
+1. **Manipulation Check #1:** The first manipulation check assesses participants’ agreement with their intended mindset. It does this by comparing the mean in each priming condition with the scale midpoint (3.5) and confirming it is above the midpoint. In other words, it will confirm that subjects in the failure-is-enhancing condition "agree" that failure can be enhancing. Likewise for the failure-is-debilitating condition. This t-test will be conducted for each condition. The results from the original study are here: 
 
-**Clarify key analysis of interest here**  I also attempt to see the link between different demographic factors (i.e. age, race, gender) and its effect on the response towards the child's failure. 
+> "One-sample t-tests comparing the mean in each priming condition with the scale’s midpoint (3.5) showed that participants’ agreement with the intended mindset was above the midpoint in both the failure-is-debilitating condition (M = 4.41, SD = 1.07), t(56) = 6.45, p < .001, and the failure-is-enhancing condition (M = 5.14, SD = 0.829), t(74) = 17.11,p < .001"
+
+2. **Manipulation Check #2: ** The second manipulation check assessed whether the biased-questionnaire manipulation effectively changed parents’ self-reported failure mindsets. It does this by comparing the means of the two conditions's answers to each other. A significant result would confirm that the biased questionnaire manipulation had a notable impact on parents' self-reported failure mindsets. The results from the original study are here: 
+
+> "Indeed, the manipulation seemed to shift parents’ mind-sets, t(124) = 2.53, p = 0.013: Parents in the failure-is-enhancing condition reported more of a failure-is-enhancing mindset than did parents in the failure-is-debilitating condition."
+
+Now, the last two analysis checks are conducted on the open-response portion of the survey. The open-response questions contain the data to provide insights on the key analysis of interest. The open-response questions are coded up using a specific coding schema from the original paper: 
+
+> "Two raters, blind to condition, coded the open-ended responses. The first author developed a coding scheme based on an initial reading of the responses and then made clarifying revisions on the basis of feedback from the two raters. The codes were broken down into two main categories of interest: performance-oriented responses and learning-oriented responses. Coders gave a score of 1 each time a code was present." 
+
+The different codes are separated into two different categories: performance-oriented (Ability, Entity Comfort, Contingent Self-Worth, Grades, Social) or learning-oriented (Effort, Strategy, Help, Mastery, Interest, Failure_Good). Each open response will be analyzed per these "codes" and each code gets a +1 whenever there is a relevant instantiation in the open responses. Here is an example -- If a parent writes this in the open response: “I would tell my son he needs to study harder,” this would receive a +1 in the effort category. Once the response is analyzed, we then sum up the number of codes present in the performance category vs. the learning category. 
+
+3. **Manipulation Check #3: ** The third manipulation check aims to check the reliability between me and the other rater's (Eunjung!) coded open responses. The reliability of our work will be shown through Intraclass correlation coefficients (ICCs) for both the performance-oriented responses and learning-oriented responses of the first 20 survey responses. ICC values between 0.75 and 0.9 will be considered adequate for this experiment. The results from the original study are here: 
+
+> "Two coders rated 20 responses (15%) to assess reliability. Intraclass correlation coefficients (ICCs) were high for both measures (performance-oriented responses: ICC = .91; learning-oriented responses: ICC = .90)."
+
+4. **Key Analysis of Interest:** Lastly, the key finding for the paper to replicate is to see whether parents in the two conditions reacted differently to the child-failure scenario in their open-response answers. This will be done through a two-sample t-test that compares each condition's (failure-is-debilitating vs. failure-is-enhancing) performance-oriented responses and learning-oriented responses. The results from the original study are here: 
+
+> "Parents who were induced to hold a failure-is-debilitating mindset were more likely to react with concerns about their child’s performance and lack of ability, t(131) = 3.246, p < .001,ηp2 = .075, and less likely to react with support for their child’s learning and mastery, t(131) = −2.04, p = .043, ηp2= .031, compared with those who were induced to hold a failure-is-enhancing mindset (see Fig. 2). Parents in both conditions did not report performance-oriented responses (M = 0.485, SD = 0.693) nearly as often as learning-oriented responses (M = 2.38, SD = 1.53)."
 
 ### Differences from Original Study and 1st replication
 
-I hope to minimize the differences between my replication study and the previous attempts. First, I hope to utilize the same survey questions and coding schemas as done before -- with the exception of adding a little bit more nuance to the decision of the coding schema. Other than that and the different parental demographics, I hope to retain the same method and analyses of both prior studies. 
+I hope to minimize the differences between my rescue project and the 1st replication. First, I utilize the same survey questions and coding schema as both the original study and the 1st replication. The survey is the same and confirmed with the original authors. In addition, the coding schema will be followed closely by both raters. Lastly, I also have one independent coder to assess my reliability for the coding of the open responses. 
+
+The only two differences between the 1st replication study and this rescue project are:
+
+1. I am using Prolific as my crowdsourcing platform (both the original study and the replication used Amazon Mechanical Turks)
+2. My study will run closer to the original sample size (original n = 132, replication n = 100, current n = 141)
+
+I **do not anticipate** that these differences will cause a big shift in the claims in the original article or the replication study on the conditions for obtaining the effect.
 
 ### Methods Addendum (Post Data Collection)
 
-You can comment this section out prior to final report with data collection.
-
 #### Actual Sample
-  Sample size, demographics, data exclusions based on rules spelled out in analysis plan
+After running the full survey on Prolific, we were able to get a total of 147 survey responses. Out of these 147 responses, 6 of them were excluded due because their open-response could not be coded up appropriately, resulting in 141 responses for the final analysis. These were responses that included "n/a" or single-word uninformative answers in their open-responses. 
+
+In addition, the final dataset had the following demographic characteristics:
+
+* **Gender**: 69.5% identifying as woman or female, 29% identifying as man or male, 1.4% Genderqueer, gender fluid, or non-binary, 0.7% identifying as agender, 0.7% identifying as transgender (participants could have chosen more than one category)
+* **Race**: 5.6% Asian, 10% Black/African American, 3.5% Hispanic, Latino, or Spanish origin, 1.4% American Indian or Alaska Native, 78% White, 1.4% filled in their own option, and 0.7% preferred not to answer (participants could have chosen more than one category)
+* **Education**: 1.4% had no degrees, 36% had a high school diploma, 45% had a college degree, and 19% had a post-graduate degree
+* **Average Age:** The average age of our survey respondents was 42.77 years
+
+The code and graphs for the demographic breakdown are in the exploratory analysis section below.
 
 #### Differences from pre-data collection methods plan
-  Any differences from what was described as the original plan, or “none”.
-
+There were no differences from the pre-data collection methods plan. 
 
 ## Results
 
-
 ### Data preparation
 
-```{r include=F}
-### Data Preparation
-
+**Goal:** Import in raw, remove testing data, and anonymize the respondents 
+```{r, message = FALSE}
 #### Load Relevant Libraries and Functions
 library(tidyverse)
 library(knitr)
+library(effsize)
+library(irr)
+library(metafor)
 
-#### Import data as CSV
+#### Import Final Qualtrics Data as CSV File
 setwd("/Users/khaingmon/Desktop/Psych_251_Data/")
-pilot_data <- read.csv("PilotBData.csv", header = TRUE, sep = ",")
+final_data <- read.csv("FinalData.csv", header = TRUE, sep = ",")
 
-#get rid of survey meta data: first two rows and columns that include items like IP address + location, data only after 17th
-pilot_data <- pilot_data[-c(1:27), ]
-pilot_data <- pilot_data[, -c(3:8)]
-pilot_data <- pilot_data[, -c(4:11)]
-pilot_data <- pilot_data[, -c(1:2)]
-
-#edit the response IDs so that they are ordered in sequential order
-pilot_data <- pilot_data %>%
-  mutate(ResponseId = row_number())
+#### Exclude Columns to Anonymize Respondents and remove all Pilot/Testing Data
+final_data <- final_data[-c(1:29), ]
+final_data <- final_data[, -c(3:8)]
+final_data <- final_data[, -c(4:11)]
+final_data <- final_data[, -c(1:2)]
 ```
-In this next section, I will filter out the dataframe, identify subjects in the debilitating/enhancing condition and 
-then split up the data into just the Open Responses and just the Survey Responses. 
 
-```{r include=F}
-#### Data exclusion:Filter out all the responses that have empty open responses or survey respondents that have no children
-filtered_pilot <- pilot_data %>%
+**Goal:** Filter out exclusion cases, label respondents with the correct manipulation conditions and split up the data 
+into just the open responses vs. survey responses. 
+```{r, echo = TRUE}
+#### Data exclusion: Remove all rows that have empty open responses or non-parent respondents
+filtered_pilot <- final_data %>%
   filter(Parent == 'Yes')  %>%
   filter(Open_1 != ''|Open_2 != ''|Open_3 != '')
 
-#label as either debilitating or enhancing condition 
+#### Data exclusion: Remove open responses that are uninformative
+filtered_pilot <- filtered_pilot[-c(18,26), ]
+
+#### Label respondents with their appropriate manipulation conditions
 filtered_pilot <- filtered_pilot %>%
   mutate(Condition = ifelse(is.na(Enhancing_1) | Enhancing_1 == "", "Debilitating", "Enhancing"))
 
-#ensure that all survey items only contain numeric values
+#### Add Numeric Response IDs 
+filtered_pilot <- filtered_pilot %>%
+   mutate(ResponseId = row_number())
 
-### dataframe with only the open response questions 
+### Create a Dataframe with only Open Responses 
 open_responses <- filtered_pilot %>%
   select(ResponseId, Open_1, Open_2, Open_3, Condition) %>%
   mutate(p_ability = 0, p_entity = 0, p_pity = 0, p_self_worth = 0, p_grades = 0, p_social = 0, l_effort = 0, l_strategy = 0, l_help = 0, l_mastery = 0, l_interest = 0, l_failure_good = 0, o_ask_child = 0, sum_performance = 0, sum_learning = 0)
-  write.csv(open_responses, "/Users/khaingmon/Desktop/haimovitz_rescue/data/pilotB_open_responses.csv")
+  write.csv(open_responses, "/Users/khaingmon/Desktop/haimovitz_rescue/data/final_open_responses.csv")
 
-### dataframe without the open response questions
+### Create a Dataframe with only Survey Responses 
 survey_responses <- filtered_pilot %>%
   select(-Open_1, -Open_2, -Open_3)
-  write.csv(survey_responses, "/Users/khaingmon/Desktop/haimovitz_rescue/data/pilotB_survey_responses.csv")
+  write.csv(survey_responses, "/Users/khaingmon/Desktop/haimovitz_rescue/data/final_survey_responses.csv")
 ```
-Now, I will load the coded responses (analysis done by blind rater on the open responses)
-```{r}
-#load in the coded data your_data <- read.csv("/Users/khaingmon/Desktop/haimovitz_rescue/data/check.csv", fill = TRUE)
-coded_data <- read.csv("/Users/khaingmon/Desktop/haimovitz_rescue/data/pilotB_coded_responses.csv", header = TRUE, sep = ",")
-``` 
 
 ### Results of control measures
 
-How did people perform on any quality control checks or positive and negative controls? 
-
-### Confirmatory analysis: Progress Check 3
-After conducting the analysis, the goal was to determine whether or not parents that held a failure-is-debilitating mind-set is more likely to react with concerns about their child's performance and whether or not this concern was related to their child's ability. This was done with an unpaired two-tailed t-test. The code for this confirmatory analyses of my pilot study is here:
+* **Larger Open-Response Boxes:** Only 6 responses were excluded from the final dataset. 
+ * **Equal Distribution in each Manipulation Condition:** After the data exclusions, there was a pretty equal number of subjects in each condition (see code below)
+ * **Parent Respondents:** After screening on both Qualtrics and Prolific, there were no survey respondents that indicated they were not a parent. 
+ 
 ```{r}
-enhancing_coded <- survey_responses %>%
-  filter(Condition == "Enhancing")
-debilitating_coded <- survey_responses %>%
- filter(Condition == "Debilitating")
+### Calculate the number of subjects in each condition 
+enhancing_count <- nrow(subset(survey_responses, Condition == "Enhancing"))
+debilitating_count <- nrow(subset(survey_responses, Condition == "Debilitating"))
 
-#separate coded data into FIE/FID conditions
+cat("The number of subjects in the failure-is-enhancing condition are:", enhancing_count)
+cat("The number of subjects in the failure-is-debilitating condition are:", debilitating_count)
+```
+
+### Confirmatory analysis
+
+#### Manipulation Check 1: Compare the mean in each priming condition to the Likert Scale Midpoint (3.5) in a T-Test
+```{r, echo = TRUE}
+columns_to_transform <- c("Initial.Survey_1", "Initial.Survey_2", "Initial.Survey_3", "Initial.Survey_4", "Enhancing_1", "Enhancing_2", "Enhancing_3", "Enhancing_4", "Enhancing_5", "Debilitating_1", "Debilitating_2", "Debilitating_3", "Debilitating_4", "Debilitating_5", "Closing_1", "Closing_2", "Closing_3", "Closing_4", "Closing_5", "Closing_6")
+
+survey_responses <- survey_responses %>%
+  mutate(across(all_of(columns_to_transform), ~as.numeric(sub("\\s*\\((.*?)\\)\\s*", "", .))))
+
+### Enhancing Condition: Divide the Dataset into the relevant condition and calculate the mean for each row of responses  
+enhancing_data <- subset(survey_responses, Condition == "Enhancing")
+enhancing_cols <- enhancing_data[, c("Enhancing_1", "Enhancing_2", "Enhancing_3", "Enhancing_4", "Enhancing_5")]
+mean_enhancing <- rowMeans(enhancing_cols)
+manipulationcheck1_enhancing <- t.test(mean_enhancing, mu = 3.5, alternative = "greater")
+
+### Debilitating Condition: Divide the Dataset into the relevant condition and calculate the mean for each row of responses  
+debilitating_data <- subset(survey_responses, Condition == "Debilitating")
+debilitating_cols <- debilitating_data[, c("Debilitating_1", "Debilitating_2", "Debilitating_3", "Debilitating_4", "Debilitating_5")]
+mean_debilitating <- rowMeans(debilitating_cols)
+manipulationcheck1_debilitating <- t.test(mean_debilitating, mu = 3.5, alternative = "greater")
+
+manipulationcheck1_enhancing
+manipulationcheck1_debilitating
+```
+**Result: ** Due to the significant results of the T-Tests of both conditions, we can conclude that Manipulation Check 1 passes. 
+
+
+#### Manipulation Check 2: Compare the means of the different conditions to each other in a two-tailed T-Test
+```{r}
+manipulationcheck2 <- t.test(mean_enhancing, mean_debilitating, alternative = "two.sided", var.equal = FALSE)
+manipulationcheck2
+```
+**Result: ** Due to the significant results of the two-tailed T-Test, we can conclude that Manipulation Check 2 passes. 
+
+
+#### Manipulation Check 3: Calculate ICC score to determine reliability between the two coders 
+
+```{r, echo = TRUE}
+### Import the first 20 coded responses for performance vs. learning questions 
+ICC_p<- read.csv("/Users/khaingmon/Desktop/haimovitz_rescue/data/ICC_performance.csv", header = TRUE, sep = ",")
+ICC_l<- read.csv("/Users/khaingmon/Desktop/haimovitz_rescue/data/ICC_learning.csv", header = TRUE, sep = ",")
+
+### This dataframe looks like this -> For each responseID, both coder's results are listed 
+head(ICC_p)
+
+### calculate the ICC score for performance
+ICC_p_coder1 <- data.frame(Coder_1 = rowSums(subset(ICC_p, Coder == 1)[, 3:8]))
+ICC_p_coder2 <- data.frame(Coder_1 = rowSums(subset(ICC_p, Coder == 2)[, 3:8]))
+ICC_p_data<- data.frame(Coder1 = ICC_p_coder1, Coder2 = ICC_p_coder2)
+colnames(ICC_p_data) <- c("Coder1", "Coder2")
+ICC_performance <-icc(ICC_p_data, model = "twoway", type = "consistency")
+
+###  calculate the ICC score for learning
+ICC_l_coder1 <- data.frame(Coder_1 = rowSums(subset(ICC_l, Coder == 1)[, 3:8]))
+ICC_l_coder2 <- data.frame(Coder_1 = rowSums(subset(ICC_l, Coder == 2)[, 3:8]))
+ICC_l_data<- data.frame(Coder1 = ICC_l_coder1, Coder2 = ICC_l_coder2)
+colnames(ICC_l_data) <- c("Coder1", "Coder2")
+ICC_learning <-icc(ICC_l_data, model = "twoway", type = "consistency")
+
+ICC_performance
+ICC_learning
+```
+**Result: ** The ICC for performance-oriented responses is 0.78 and the ICC for learning-oriented responses is 0.908. Since ICC values between 0.75 and 0.9 are considered generally effective, we can conclude that Manipulation Check 3 passes. 
+
+#### Key Analysis of Interest
+**Goal:** Load in the completed coded open responses (completed by me and Eunjung) and conduct the final T-Test
+```{r, echo = TRUE}
+### Imported Coded Open Responses
+coded_data <- read.csv("/Users/khaingmon/Desktop/haimovitz_rescue/data/final_coded_responses.csv", header = TRUE, sep = ",")
+
+### Separate Coded Data into the two manipulation conditions
 coded_fie <- coded_data %>%
   filter(Condition == 'Enhancing')  
 coded_fid <- coded_data %>%
   filter(Condition == 'Debilitating')
 
-#conduct the t-test. For pilot B, there are no results yet because we only have on observation each, but this line of code does conduct t.test correctly. 
-t_value <- t.test(coded_fie$sum_performance, coded_fid$sum_performance)
-p_value <- t_value$p.value
+# Conduct the T-Tests
+t_test_performance <- t.test(coded_fie$sum_performance, coded_fid$sum_performance, alternative = "two.sided", var.equal = FALSE)
+t_test_performance
+
+t_test_learning <- t.test(coded_fie$sum_learning, coded_fid$sum_learning, alternative = "two.sided", var.equal = FALSE)
+t_test_learning
+
+### Calculate standard errors for performance vs. learning
+SEI_performance <- t_test_performance$stderr
+SEI_learning <- t_test_learning$stderr
+```
+**Goal:** Draw the relevant graph
+```{r}
+graph <- coded_data %>%
+  pivot_longer(sum_performance:sum_learning,
+               names_to = "response_type",
+               values_to = "num_response") %>%
+  group_by(Condition, response_type) %>%
+  summarise(
+    count = n(),
+    mean = mean(num_response, na.rm = TRUE),
+    sd = sd(num_response, na.rm = TRUE), 
+    sem = sd / sqrt(count),
+    .groups = "drop"
+  )
+
+### Reorder the bars so that performance comes before learning 
+graph$response_type <- factor(graph$response_type, levels = c("sum_performance", "sum_learning"))
+
+ggplot(data = graph, aes(x = response_type, y = mean, fill = Condition)) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7, colour="black") +
+  geom_errorbar(aes(ymin = mean - sem, ymax = mean + sem), position = position_dodge(width = 0.7), width = 0.25) +
+  labs(title = "Parental Responses to Child-Failure Scenario",
+       x = "",
+       y = "Number of Responses",
+       fill = "",) +
+  scale_fill_manual(values = c("Debilitating" = "white", "Enhancing" = "darkgrey"), #rename labels and dedicate colors to conditoins
+                    name = "Condition",
+                    labels = c("Debilitating" = "Failure-is-Debilitating Condition", "Enhancing" = "Failure-is-Enhancing Condition")) +
+  scale_x_discrete(labels = c("sum_performance" = "Performance-Oriented", "sum_learning" = "Learning-Oriented")) +
+  scale_y_continuous(expand = c(0, 0)) + # plot starts at bottom of y-axis
+  theme_minimal() + 
+  theme( # change theme to be more similar to original paper 
+    panel.grid = element_blank(),
+    panel.border = element_blank(),
+    axis.line = element_line(color = "black"),
+    )
+```
+
+**Result: **  We can see on the graph that failure-is-debilitating parents a tiny marginal larger number of performance-oriented responses. However, as you can see in the results above, both t-tests do not give significant results. Therefore, we are not able to conclude whether parents in the debilitating mindset were more likely to act with concern about their children's performance. 
+
+![](/Users/khaingmon/Desktop/haimovitz_rescue/data/three-panel.png)
+
+*A three-panel graph with original, 1st replication, and your replication*
+
+### Exploratory analyses
+This section contains the code and graphs for the demographics breakdown mentioned in the Methods Addendum section
+```{r}
+### Gender
+gender_counts <- table(survey_responses$Gender)
+print(gender_counts)
+
+ggplot(survey_responses, aes(x = Gender, fill = Gender)) +
+  geom_bar(color = "black", position = "identity") +
+  theme_minimal() +
+  labs(title = "Demographics: Gender",
+       x = "Identified Gender",
+       y = "Count") +
+  theme_minimal() +
+  theme( 
+    panel.grid = element_blank(), 
+    panel.border = element_blank(),
+    axis.text.x = element_blank(),  # gets rid of long labels 
+    axis.line = element_line(color = "black"), # added y-axis line
+    plot.title = element_text(hjust = 0.5)  # center the title
+  )
 
 ```
 
+```{r}
+### Race
+race_counts <- table(survey_responses$Race)
+race_counts
 
-*Three-panel graph with original, 1st replication, and your replication is ideal here*
+ggplot(survey_responses, aes(x = Race, fill = Race)) +
+  geom_bar(color = "black", position = "identity") +
+  theme_minimal() +
+  labs(title = "Demographics: Race",
+       x = "Identified Race",
+       y = "Count") +
+  theme_minimal() +
+  theme( 
+    panel.grid = element_blank(), 
+    panel.border = element_blank(),
+    axis.text.x = element_blank(),  # gets rid of long labels 
+    axis.line = element_line(color = "black"), # added y-axis line
+    plot.title = element_text(hjust = 0.5)  # Center the title
+  )
+```
 
-### Exploratory analyses
 
-Any follow-up analyses desired (not required).  
+```{r}
+### Education
+education_counts <- table(survey_responses$Education)
+education_counts
+
+ggplot(survey_responses, aes(x = Education, fill = Education)) +
+  geom_bar(color = "black", position = "identity") +
+  theme_minimal() +
+  labs(title = "Demographics: Education",
+       x = "Education",
+       y = "Count") +
+  theme_minimal() +
+  theme( 
+    panel.grid = element_blank(), 
+    panel.border = element_blank(),
+    axis.text.x = element_blank(),  # gets rid of long x-labels 
+    axis.line = element_line(color = "black"), 
+    plot.title = element_text(hjust = 0.5)  # Center the title
+  )
+```
+
+
+```{r}
+### Age
+survey_responses$Age <- as.numeric(survey_responses$Age)
+average_age <- mean(survey_responses$Age, na.rm = TRUE)
+average_age
+
+ggplot(survey_responses, aes(x = Age)) +
+  geom_histogram(binwidth = 5, color = "black", fill = "grey") +
+  labs(title = "Demographics: Age",
+       x = "Age",
+       y = "Count") +
+  theme_minimal() +
+  theme( 
+    panel.grid = element_blank(), 
+    panel.border = element_blank(),
+    axis.line = element_line(color = "black"), 
+    plot.title = element_text(hjust = 0.5)  # Center the title
+  )
+```
 
 ## Discussion
 
-## Mini meta analysis
-Combining across the original paper, 1st replication, and 2nd replication, what is the aggregate effect size? 
+### Mini meta analysis
+For meta-analysis, I was unable to find the effect sizes for the Born replication study and the variances from the original study. For this reason, I conducted the meta-analysis between just the original study and my replication study. In addition, since I was unable to find the variances, I used the variances for my studies for the original study as well (though this is a flawed method and should be further refined in future iterations).
+
+```{r}
+### run meta-analysis using RMA 
+paper_names <- c("Original Paper", "My Rescue Paper")
+performance_effect_sizes <- c(0.075, cohen.d(coded_fie$sum_performance, coded_fid$sum_performance)$estimate)
+learning_effect_sizes <- c(0.031, cohen.d(coded_fie$sum_learning, coded_fid$sum_learning)$estimate)
+
+### Since I have no standard errors of the original paper, I used mine for both
+metadata <- data.frame(paper = paper_names, 
+                       performance_effect_size = performance_effect_sizes, 
+                       learning_effect_size = learning_effect_sizes, 
+                       SEI_performance = SEI_performance, 
+                       SEI_learning = SEI_performance)
+### Run RMA
+performance_model <- rma(yi = performance_effect_size, sei = SEI_performance, data = metadata)
+learning_model <- rma(yi = learning_effect_size,sei = SEI_learning, data = metadata)
+
+### Plot Forest
+forest(performance_model, slab = paper_names)
+forest(learning_model, slab = paper_names)
+```
 
 ### Summary of Replication Attempt
+My rescue study aimed to closely follow both the original and the 1st replication attempt. In doing so, I was able to replicate 3 of the 4 different analysis components of the project. I was able to obtain significant results from Manipulation Check 1, 2, and 3 -- which indicates that 1) my manipulation conditions impacted respondents effectively and 2) the coding of the open-response answers was consistent with the other rater.
 
-Open the discussion section with a paragraph summarizing the primary result from the confirmatory analysis and the assessment of whether it replicated, partially replicated, or failed to replicate the original result.  
+The study, however, was unable to replicate the key findings of the paper. Here are some comparisons: 
+
+* Results showed that there was a general trend where parents in the failure-is-debilitating condition reacted with more concerns about their child's performance (t = -0.31, p = 0.75). However, the results were not significant.
+* In contrast to the original study, my results showed that parents in the failure-is-debilitating condition reacted with more concerns about their child's learning compared to parents in the failure-is-enhancing condition (t = -0.849, p = 0.397). These results are also not significant. 
+* The only true comparison that I was able to replicate for this key analysis was that parents in both conditions did not report performance-oriented responses nearly as often as learning-oriented responses” (see graph above and code below).
+
+```{r}
+head(graph)
+```
+
+Therefore, my replication experiment **failed** to replicate the key findings from the original study.
 
 ### Commentary
+Though I was unable to replicate the findings of the original study, there were some key insights I gained through running this experiment: 
 
-Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.
+1. Coding the open responses involved a lot of subjectivity. Though our ICC score was quite high, there were some cases in which the other rater and I coded the responses differently. This was resolved by going through the responses together and arriving at a consensus, but was subjective and left a lot of room for interpretation. I could potentially see someone else coming in and getting different results if they did not have conversations with us. 
+2. There were some responses that were not accounted for in the coding scheme. Since subjects could write whatever they wished on the questions, there were cases where they wrote new, unique responses that were not accounted for in the schema. Though we tried our best to align these responses, it was difficult to code novel responses. This led to another level of subjectivity. 
+3. I wonder how difficult it is to induce a type of mindset in a parent. The manipulation condition aimed to induce a specific intelligent mindset for each subject. Though the t-tests on the manipulation checks seem to be significant, I question whether or not a biased questionnaire is enough to change parents' mindsets on their intelligence mindsets. Since these are long-standing beliefs that involve themselves and their children, I wonder about the extent to which a biased questionnaire can change their mindsets/outlooks on the failure scenarios. 

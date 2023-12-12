@@ -49,8 +49,12 @@ Can quote directly from original article - just put the text in quotations and n
 
 ### Controls
 
-What attention checks, positive or negative controls, or other quality control measures are you adding so that a (positive or negative) result will be more interpretable?
+To ensure that we could maximize the number of viable survey responses, I add the following attention checks and controls: 
 
+*longer text boxes
+*making sure parents --> logic in the qualtrics
+* equal distrubtion in qualtrics
+* screenign on prolific 
 
 ### Analysis Plan
 
