@@ -112,7 +112,7 @@ The only two differences between the 1st replication study and this rescue proje
 1. I am using Prolific as my crowdsourcing platform (both the original study and the replication used Amazon Mechanical Turks)
 2. My study will run closer to the original sample size (original n = 132, replication n = 100, current n = 141)
 
-I **do not anticipate** that these differences will cause a big shift in the claims in the original article or the replication study on the conditions for obtaining the effect.
+I **do not anticipate** that these differences will cause a big shift in the claims in the original article or the replication study on the conditions for obtaining the effect. According to the scale in Figure 1 of LeBel et al. (2017), this study is a **Close Replication** of the original study.
 
 ### Methods Addendum (Post Data Collection)
 
@@ -143,16 +143,13 @@ library(knitr)
 library(effsize)
 library(irr)
 library(metafor)
+library(here)
+
+here::set_here()
 
 #### Import Final Qualtrics Data as CSV File
-setwd("/Users/khaingmon/Desktop/Psych_251_Data/")
-final_data <- read.csv("FinalData.csv", header = TRUE, sep = ",")
+final_data <- read.csv(here("data", "FinalData.csv"), header = TRUE, sep = ",")
 
-#### Exclude Columns to Anonymize Respondents and remove all Pilot/Testing Data
-final_data <- final_data[-c(1:29), ]
-final_data <- final_data[, -c(3:8)]
-final_data <- final_data[, -c(4:11)]
-final_data <- final_data[, -c(1:2)]
 ```
 
 **Goal:** Filter out exclusion cases, label respondents with the correct manipulation conditions and split up the data 
@@ -178,12 +175,12 @@ filtered_pilot <- filtered_pilot %>%
 open_responses <- filtered_pilot %>%
   select(ResponseId, Open_1, Open_2, Open_3, Condition) %>%
   mutate(p_ability = 0, p_entity = 0, p_pity = 0, p_self_worth = 0, p_grades = 0, p_social = 0, l_effort = 0, l_strategy = 0, l_help = 0, l_mastery = 0, l_interest = 0, l_failure_good = 0, o_ask_child = 0, sum_performance = 0, sum_learning = 0)
-  write.csv(open_responses, "/Users/khaingmon/Desktop/haimovitz_rescue/data/final_open_responses.csv")
-
+  write.csv(open_responses, here("data", "final_open_responses.csv"))
+  
 ### Create a Dataframe with only Survey Responses 
 survey_responses <- filtered_pilot %>%
   select(-Open_1, -Open_2, -Open_3)
-  write.csv(survey_responses, "/Users/khaingmon/Desktop/haimovitz_rescue/data/final_survey_responses.csv")
+  write.csv(survey_responses, here("data", "final_survey_responses.csv"))
 ```
 
 ### Results of control measures
@@ -240,8 +237,8 @@ manipulationcheck2
 
 ```{r, echo = TRUE}
 ### Import the first 20 coded responses for performance vs. learning questions 
-ICC_p<- read.csv("/Users/khaingmon/Desktop/haimovitz_rescue/data/ICC_performance.csv", header = TRUE, sep = ",")
-ICC_l<- read.csv("/Users/khaingmon/Desktop/haimovitz_rescue/data/ICC_learning.csv", header = TRUE, sep = ",")
+ICC_p <- read.csv(here("data", "ICC_performance.csv"), header = TRUE, sep = ",")
+ICC_l <- read.csv(here("data", "ICC_learning.csv"), header = TRUE, sep = ",")
 
 ### This dataframe looks like this -> For each responseID, both coder's results are listed 
 head(ICC_p)
@@ -269,7 +266,7 @@ ICC_learning
 **Goal:** Load in the completed coded open responses (completed by me and Eunjung) and conduct the final T-Test
 ```{r, echo = TRUE}
 ### Imported Coded Open Responses
-coded_data <- read.csv("/Users/khaingmon/Desktop/haimovitz_rescue/data/final_coded_responses.csv", header = TRUE, sep = ",")
+coded_data <- read.csv(here("data", "final_coded_responses.csv"), header = TRUE, sep = ",")
 
 ### Separate Coded Data into the two manipulation conditions
 coded_fie <- coded_data %>%
@@ -459,7 +456,7 @@ The study, however, was unable to replicate the key findings of the paper. Here 
 head(graph)
 ```
 
-Therefore, my replication experiment **failed** to replicate the key findings from the original study.
+Therefore, my replication experiment **failed** to replicate the key findings from the original study.Since 3 out of 4 of the different analysis components were replicated, but the key test failed, I would rate this study to be a **partial replication (0.5)**
 
 ### Commentary
 Though I was unable to replicate the findings of the original study, there were some key insights I gained through running this experiment: 

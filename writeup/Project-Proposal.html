@@ -11,7 +11,7 @@
 
 <meta name="author" content="Khaing Mon (ksmon@stanford.edu)" />
 
-<meta name="date" content="2023-12-11" />
+<meta name="date" content="2024-04-30" />
 
 <title>Replication of Study Parents’ Views of Failure Predict Children’s Fixed and Growth Intelligence Mind-Sets by Haimovitz &amp; Dweck (2016, Psychological Science)</title>
 
@@ -1495,7 +1495,7 @@ font-size: 0.95em;
 Failure Predict Children’s Fixed and Growth Intelligence Mind-Sets by
 Haimovitz &amp; Dweck (2016, Psychological Science)</h1>
 <h4 class="author">Khaing Mon (<a href="mailto:ksmon@stanford.edu" class="email">ksmon@stanford.edu</a>)</h4>
-<h4 class="date">December 11, 2023</h4>
+<h4 class="date">April 30, 2024</h4>
 
 </div>
 
@@ -1785,7 +1785,9 @@ study and the replication used Amazon Mechanical Turks)</li>
 </ol>
 <p>I <strong>do not anticipate</strong> that these differences will
 cause a big shift in the claims in the original article or the
-replication study on the conditions for obtaining the effect.</p>
+replication study on the conditions for obtaining the effect. According
+to the scale in Figure 1 of LeBel et al. (2017), this study is a
+<strong>Close Replication</strong> of the original study.</p>
 </div>
 <div id="methods-addendum-post-data-collection" class="section level3">
 <h3>Methods Addendum (Post Data Collection)</h3>
@@ -1837,16 +1839,12 @@ library(knitr)
 library(effsize)
 library(irr)
 library(metafor)
+library(here)
+
+here::set_here()
 
 #### Import Final Qualtrics Data as CSV File
-setwd(&quot;/Users/khaingmon/Desktop/Psych_251_Data/&quot;)
-final_data &lt;- read.csv(&quot;FinalData.csv&quot;, header = TRUE, sep = &quot;,&quot;)
-
-#### Exclude Columns to Anonymize Respondents and remove all Pilot/Testing Data
-final_data &lt;- final_data[-c(1:29), ]
-final_data &lt;- final_data[, -c(3:8)]
-final_data &lt;- final_data[, -c(4:11)]
-final_data &lt;- final_data[, -c(1:2)]</code></pre>
+final_data &lt;- read.csv(here(&quot;data&quot;, &quot;FinalData.csv&quot;), header = TRUE, sep = &quot;,&quot;)</code></pre>
 <p><strong>Goal:</strong> Filter out exclusion cases, label respondents
 with the correct manipulation conditions and split up the data into just
 the open responses vs. survey responses.</p>
@@ -1870,12 +1868,12 @@ filtered_pilot &lt;- filtered_pilot %&gt;%
 open_responses &lt;- filtered_pilot %&gt;%
   select(ResponseId, Open_1, Open_2, Open_3, Condition) %&gt;%
   mutate(p_ability = 0, p_entity = 0, p_pity = 0, p_self_worth = 0, p_grades = 0, p_social = 0, l_effort = 0, l_strategy = 0, l_help = 0, l_mastery = 0, l_interest = 0, l_failure_good = 0, o_ask_child = 0, sum_performance = 0, sum_learning = 0)
-  write.csv(open_responses, &quot;/Users/khaingmon/Desktop/haimovitz_rescue/data/final_open_responses.csv&quot;)
-
+  write.csv(open_responses, here(&quot;data&quot;, &quot;final_open_responses.csv&quot;))
+  
 ### Create a Dataframe with only Survey Responses 
 survey_responses &lt;- filtered_pilot %&gt;%
   select(-Open_1, -Open_2, -Open_3)
-  write.csv(survey_responses, &quot;/Users/khaingmon/Desktop/haimovitz_rescue/data/final_survey_responses.csv&quot;)</code></pre>
+  write.csv(survey_responses, here(&quot;data&quot;, &quot;final_survey_responses.csv&quot;))</code></pre>
 </div>
 <div id="results-of-control-measures" class="section level3">
 <h3>Results of control measures</h3>
@@ -1971,8 +1969,8 @@ two-tailed T-Test, we can conclude that Manipulation Check 2 passes.</p>
 <h4>Manipulation Check 3: Calculate ICC score to determine reliability
 between the two coders</h4>
 <pre class="r"><code>### Import the first 20 coded responses for performance vs. learning questions 
-ICC_p&lt;- read.csv(&quot;/Users/khaingmon/Desktop/haimovitz_rescue/data/ICC_performance.csv&quot;, header = TRUE, sep = &quot;,&quot;)
-ICC_l&lt;- read.csv(&quot;/Users/khaingmon/Desktop/haimovitz_rescue/data/ICC_learning.csv&quot;, header = TRUE, sep = &quot;,&quot;)
+ICC_p &lt;- read.csv(here(&quot;data&quot;, &quot;ICC_performance.csv&quot;), header = TRUE, sep = &quot;,&quot;)
+ICC_l &lt;- read.csv(here(&quot;data&quot;, &quot;ICC_learning.csv&quot;), header = TRUE, sep = &quot;,&quot;)
 
 ### This dataframe looks like this -&gt; For each responseID, both coder&#39;s results are listed 
 head(ICC_p)</code></pre>
@@ -2037,7 +2035,7 @@ conclude that Manipulation Check 3 passes.</p>
 <p><strong>Goal:</strong> Load in the completed coded open responses
 (completed by me and Eunjung) and conduct the final T-Test</p>
 <pre class="r"><code>### Imported Coded Open Responses
-coded_data &lt;- read.csv(&quot;/Users/khaingmon/Desktop/haimovitz_rescue/data/final_coded_responses.csv&quot;, header = TRUE, sep = &quot;,&quot;)
+coded_data &lt;- read.csv(here(&quot;data&quot;, &quot;final_coded_responses.csv&quot;), header = TRUE, sep = &quot;,&quot;)
 
 ### Separate Coded Data into the two manipulation conditions
 coded_fie &lt;- coded_data %&gt;%
@@ -2304,7 +2302,10 @@ responses” (see graph above and code below).</li>
 ## 3 Enhancing    sum_learning       69  2.51 1.28  0.154
 ## 4 Enhancing    sum_performance    69  1.03 1.14  0.137</code></pre>
 <p>Therefore, my replication experiment <strong>failed</strong> to
-replicate the key findings from the original study.</p>
+replicate the key findings from the original study.Since 3 out of 4 of
+the different analysis components were replicated, but the key test
+failed, I would rate this study to be a <strong>partial replication
+(0.5)</strong></p>
 </div>
 <div id="commentary" class="section level3">
 <h3>Commentary</h3>
