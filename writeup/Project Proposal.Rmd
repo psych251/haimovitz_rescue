@@ -145,17 +145,18 @@ library(irr)
 library(metafor)
 library(here)
 
-here::set_here()
+
+data_loc <- "data"
 
 #### Import Final Qualtrics Data as CSV File
-final_data <- read.csv(here("data", "FinalData.csv"), header = TRUE, sep = ",")
+final_data <- read.csv(here(data_loc, "FinalData.csv"), header = TRUE, sep = ",")
 
 ```
 
 **Goal:** Filter out exclusion cases, label respondents with the correct manipulation conditions and split up the data 
 into just the open responses vs. survey responses. 
 ```{r, echo = TRUE}
-#### Data exclusion: Remove all rows that have empty open responses or non-parent respondents
+#### Data exclusion: remove all rows that have empty open responses or non-parent respondents
 filtered_pilot <- final_data %>%
   filter(Parent == 'Yes')  %>%
   filter(Open_1 != ''|Open_2 != ''|Open_3 != '')
@@ -237,8 +238,8 @@ manipulationcheck2
 
 ```{r, echo = TRUE}
 ### Import the first 20 coded responses for performance vs. learning questions 
-ICC_p <- read.csv(here("data", "ICC_performance.csv"), header = TRUE, sep = ",")
-ICC_l <- read.csv(here("data", "ICC_learning.csv"), header = TRUE, sep = ",")
+ICC_p <- read.csv(here(data_loc, "ICC_Performance.csv"), header = TRUE, sep = ",")
+ICC_l <- read.csv(here("data", "ICC_Learning.csv"), header = TRUE, sep = ",")
 
 ### This dataframe looks like this -> For each responseID, both coder's results are listed 
 head(ICC_p)
@@ -325,7 +326,7 @@ ggplot(data = graph, aes(x = response_type, y = mean, fill = Condition)) +
 
 **Result: **  We can see on the graph that failure-is-debilitating parents a tiny marginal larger number of performance-oriented responses. However, as you can see in the results above, both t-tests do not give significant results. Therefore, we are not able to conclude whether parents in the debilitating mindset were more likely to act with concern about their children's performance. 
 
-![](/Users/khaingmon/Desktop/haimovitz_rescue/data/three-panel.png)
+![](../data/three-panel.png)
 
 *A three-panel graph with original, 1st replication, and your replication*
 
